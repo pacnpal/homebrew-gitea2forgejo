@@ -26,16 +26,11 @@ class Gitea2forgejo < Formula
     end
   end
 
-  # External tools the migration shells out to. Homebrew resolves these
-  # automatically — no separate `install.sh` dependency step needed.
   depends_on "rsync"
-  depends_on "libpq"          # pg_dump, pg_restore, psql
-  depends_on "mysql-client"   # mysql, mysqldump
+  depends_on "libpq"
+  depends_on "mysql-client"
   depends_on "sqlite"
   depends_on "zstd"
-  # Optional by use case (operator installs when needed):
-  #   `brew install minio/stable/mc`   — S3/MinIO mirror
-  #   `brew install skopeo`            — OCI package transfer
 
   def install
     platform =
@@ -49,8 +44,6 @@ class Gitea2forgejo < Formula
   end
 
   test do
-    # Binary should print its version string — implicit sanity that it
-    # actually runs on the host arch and isn't mis-hashed.
     assert_match(/gitea2forgejo/, shell_output("#{bin}/gitea2forgejo --version"))
   end
 end
