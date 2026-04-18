@@ -43,17 +43,6 @@ class Gitea2forgejo < Formula
     bin.install "gitea2forgejo-#{platform}" => "gitea2forgejo"
   end
 
-  def post_install
-    # macOS: pre-empt any quarantine attribute the download picked up
-    # (brew's fetcher doesn't normally attach it, but future macOS
-    # versions may tighten Gatekeeper). Ad-hoc signing afterwards
-    # means `xattr -c` elsewhere can't silently strip a real signature.
-    return unless OS.mac?
-    binary = bin/"gitea2forgejo"
-    system "/usr/bin/xattr", "-dr", "com.apple.quarantine", binary
-    system "/usr/bin/codesign", "--force", "--sign", "-", binary
-  end
-
   test do
     assert_match(/gitea2forgejo/, shell_output("#{bin}/gitea2forgejo --version"))
   end
