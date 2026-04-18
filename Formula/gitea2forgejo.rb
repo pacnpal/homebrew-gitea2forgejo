@@ -1,28 +1,28 @@
 class Gitea2forgejo < Formula
   desc "One-time, full-fidelity migration from Gitea >=1.23 to Forgejo v15+"
   homepage "https://github.com/pacnpal/gitea2forgejo"
-  version "0.2.24"
+  version "0.2.25"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/pacnpal/gitea2forgejo/releases/download/v#{version}/gitea2forgejo-darwin-arm64"
-      sha256 "5253b0d97b2d77b1c8b789c7e621d323cb361c2be0b2b572c85f055cd884d014"
+      sha256 "fbeec13923141f570f145375280c16fbfb2d4bb7f31a1acd4aea424542a03f44"
     end
     on_intel do
       url "https://github.com/pacnpal/gitea2forgejo/releases/download/v#{version}/gitea2forgejo-darwin-amd64"
-      sha256 "69de7aeaf22640f81cc00c775f5648c31f0c6a363ff814606ff746b923308ac2"
+      sha256 "2cfc296c76ac83c66d48ab63e9f8e21365b1136f5103a205b58f1e29c1b29fa1"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/pacnpal/gitea2forgejo/releases/download/v#{version}/gitea2forgejo-linux-arm64"
-      sha256 "8da16a42e2412c98b213e0645892046ae315418b97b727b99ceb201e8ef52070"
+      sha256 "c3031201a73edf8bc9a504eb11aa9f8e0866c5d02dd1e3672deb49addfa7666e"
     end
     on_intel do
       url "https://github.com/pacnpal/gitea2forgejo/releases/download/v#{version}/gitea2forgejo-linux-amd64"
-      sha256 "6ca8f13029b5c67cf5262bc6afead8179f65843948c41e228c4625ba95ca042a"
+      sha256 "f547d4add31c34da287873ee24b81da77f725c6698ca3a32e1f5b2cd180a6bf1"
     end
   end
 
